@@ -3,8 +3,8 @@
 module module_freq_div_tb;
 
     // Declaración de señales
-    reg clk;           // Reloj de entrada
-    wire clk_out;      // Reloj de salida del divisor de frecuencia
+    logic clk;           // Reloj de entrada
+    logic clk_out;      // Reloj de salida del divisor de frecuencia
 
     // Instancia del módulo bajo prueba (DUT)
     module_freq_div uut (.clk(clk), .clk_out(clk_out));
@@ -22,10 +22,8 @@ module module_freq_div_tb;
         // Monitorear el comportamiento de la salida
         $monitor("Time: %t, clk_out: %b", $time, clk_out);
 
-        // Correr la simulación por un periodo suficientemente largo
-        #3000000; // 3 ms (aproximadamente)
-
-        // Finalizar la simulación
+        // Correr la simulación por 3 ms (aproximadamente)
+        #3000000;
         $finish;
     end
 

@@ -1,5 +1,5 @@
 $date
-	Sat Mar 22 23:17:05 2025
+	Sun Mar 23 20:10:46 2025
 $end
 $version
 	Icarus Verilog
@@ -8,11 +8,11 @@ $timescale
 	1ps
 $end
 $scope module module_bcd_decoder_tb $end
-$var wire 7 ! bcd [6:0] $end
+$var wire 7 ! d [6:0] $end
 $var reg 4 " w [3:0] $end
 $scope module uut $end
 $var wire 4 # w [3:0] $end
-$var wire 7 $ bcd [6:0] $end
+$var wire 7 $ d [6:0] $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
