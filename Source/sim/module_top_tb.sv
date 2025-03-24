@@ -26,8 +26,8 @@ module module_top_tb;
 
     initial begin
         clk=0;
-        i = 4'b0001; // Numero binario
-        e = 7'b1110110; #10; // Numero binario codificado error en bit 5
+        i = 4'b0101; // Numero binario
+        e = 7'b1100110; // Numero binario codificado error en bit 5
         $monitor("Reloj: %t, Segmentos: %b", $time, d);
 
         

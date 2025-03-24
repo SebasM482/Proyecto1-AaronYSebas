@@ -1,18 +1,22 @@
 `timescale 1ns/1ps
+// Este modulo es un divisor de frecuencia, el cual implenta un contador para determinar los momentos en los 
+// en los que se debe conmutar la señal para que dicha señal sea de la frecuencia que se desea
+
+
 
 module module_freq_div(
-    input logic clk, 
-    output logic clk_out,
-    output logic x,
-    output logic y);
+    input logic clk,       // Signal de reloj interno 27 MHz
+    output logic clk_out,  // Signal de frecuencia deseada
+    output logic x,        // Signal de control de bjt x
+    output logic y);       // Signal de control de bjt y
 
-    parameter frequency = 27_000_000;  // Frecuencia de entrada (27 MHz)
-    parameter freq_out = 1_000;        // Frecuencia de salida deseada (1 kHz)
-    parameter max_count = frequency / (2 * freq_out);
+    parameter frequency = 27_000_000;                   // Frecuencia de entrada (27 MHz)
+    parameter freq_out = 1_000;                         // Frecuencia de salida ajustable
+    parameter max_count = frequency / (2 * freq_out);   // La cuenta maxima del contador
 
     logic [24:0] count;  // Tamaño suficiente para almacenar max_count
 
-    // Inicialización
+    // Inicialización de los valores iniciales
     initial begin
         count = 0;
         clk_out = 0;
@@ -21,10 +25,11 @@ module module_freq_div(
     end
 
     // Lógica para contar y generar clk_out
-    always @(posedge clk) begin
+    always @(posedge clk) begin    // posedge clk -> flancos de subida de clk
         if (count == max_count - 1) begin
-            clk_out <= ~clk_out; // Cambia el estado del clock de salida
-            x <= ~x;
+            // Se conmutan las señales de salida
+            clk_out <= ~clk_out;
+            x <= ~x;             
             y <= ~y;
             count <= 0;
         end 
