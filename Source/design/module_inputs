@@ -1,0 +1,11 @@
+`timescale 1ns/1ps
+
+module module_inputs(
+    input logic port25,
+    input logic port26,
+    input logic port27,
+    input logic port28,
+    input logic port29,
+    output logic module_top //Donde se tienen que enviar
+);
+endmodule

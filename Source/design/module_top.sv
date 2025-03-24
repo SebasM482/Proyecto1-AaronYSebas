@@ -1,6 +1,7 @@
 `timescale 1ns/1ps
 
 module module_top(
+    //input logic module_inputs //Recibe los valores de los Pins
     input logic clk,
     input logic [3:0] i,   // Numero binario
     input logic [6:0] e,   // Numero binario codificado
