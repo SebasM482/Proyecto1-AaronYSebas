@@ -1,0 +1,75 @@
+//Clock
+IO_LOC  "clk" 52;
+IO_PORT "clk" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+
+
+//Switches
+IO_LOC  "btn1" 3;
+IO_PORT "btn1" IO_TYPE=LVCMOS18;
+
+IO_LOC  "btn2" 4;
+IO_PORT "btn2" IO_TYPE=LVCMOS18;
+
+
+//LEDs
+IO_LOC  "led[0]" 10;
+IO_PORT "led[0]" DRIVE=8 IO_TYPE=LVCMOS18;
+
+IO_LOC  "led[1]" 11;
+IO_PORT "led[1]" DRIVE=8 IO_TYPE=LVCMOS18;
+
+IO_LOC  "led[2]" 13;
+IO_PORT "led[2]" DRIVE=8 IO_TYPE=LVCMOS18;
+
+IO_LOC  "led[3]" 14;
+IO_PORT "led[3]" DRIVE=8 IO_TYPE=LVCMOS18;
+
+IO_LOC  "led[4]" 15;
+IO_PORT "led[4]" DRIVE=8 IO_TYPE=LVCMOS18;
+
+IO_LOC  "led[5]" 16;
+IO_PORT "led[5]" DRIVE=8 IO_TYPE=LVCMOS18;
+
+
+//Header_physical_ports
+//DRIVE: current in mA (4, 8, 16 or 24), //PULL_MODE: ensure a known state for a signal (GND or VCC), //IO_TYPE: LVCMOS33/LVCMOS18 voltage (3.3 or 1.8)
+//Any header on the board can be used, in this section there are only those that are not used by the boards interfaces, for example, HDMI. To use any port you just have to follow the format.
+IO_LOC "port25" 25;
+IO_LOC "port25" DRIVE=8 IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+IO_LOC "port26" 26;
+IO_LOC "port26" DRIVE=8 IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+IO_LOC "port27" 27;
+IO_LOC "port27" DRIVE=8 IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+IO_LOC "port28" 28;
+IO_LOC "port28" DRIVE=8 IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+IO_LOC "port29" 29;
+IO_LOC "port29" DRIVE=8 IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+IO_LOC "port30" 30;
+IO_LOC "port30" DRIVE=8 IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+IO_LOC "port79" 79;
+IO_LOC "port79" DRIVE=8 IO_TYPE=LVCMOS18 PULL_MODE=DOWN;
+
+IO_LOC "port80" 80;
+IO_LOC "port80" DRIVE=8 IO_TYPE=LVCMOS18 PULL_MODE=DOWN;
+
+IO_LOC "port81" 81;
+IO_LOC "port81" DRIVE=8 IO_TYPE=LVCMOS18 PULL_MODE=DOWN;
+
+IO_LOC "port82" 82;
+IO_LOC "port82" DRIVE=8 IO_TYPE=LVCMOS18 PULL_MODE=DOWN;
+
+IO_LOC "port83" 83;
+IO_LOC "port83" DRIVE=8 IO_TYPE=LVCMOS18 PULL_MODE=DOWN;
+
+IO_LOC "port84" 84;
+IO_LOC "port84" DRIVE=8 IO_TYPE=LVCMOS18 PULL_MODE=DOWN;
+
+IO_LOC "port85" 85;
+IO_LOC "port85" DRIVE=8 IO_TYPE=LVCMOS18 PULL_MODE=DOWN;
+
