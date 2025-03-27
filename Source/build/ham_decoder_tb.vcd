@@ -1,5 +1,5 @@
 $date
-	Thu Mar 27 13:47:47 2025
+	Thu Mar 27 14:35:09 2025
 $end
 $version
 	Icarus Verilog
@@ -14,8 +14,8 @@ $var reg 7 # e [6:0] $end
 $scope module uut $end
 $var wire 7 $ e [6:0] $end
 $var wire 4 % p [3:0] $end
-$var wire 4 & c [3:0] $end
-$var reg 7 ' corrected_e [6:0] $end
+$var wire 7 & corrected_e [6:0] $end
+$var wire 4 ' c [3:0] $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
@@ -24,8 +24,8 @@ $dumpall
 $end
 #0
 $dumpvars
-b1100110 '
-b1101 &
+b1101 '
+b1100110 &
 b101 %
 b1110110 $
 b1110110 #
@@ -34,10 +34,10 @@ b101 !
 $end
 #10000
 b1101 "
-b1101 &
+b1101 '
+b1100110 &
 b0 !
 b0 %
-b1100110 '
 b1100110 #
 b1100110 $
 #20000
