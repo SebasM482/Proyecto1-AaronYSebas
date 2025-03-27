@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
 
 
-module module_top_tb;
+module top_tb;
 
     // Declaracion de entradas
     logic [3:0] i;   // Numero binario
@@ -17,7 +17,7 @@ module module_top_tb;
 
 
     // Instaciamiento de los modulos
-    module_top uut(.clk(clk), .i(i), .e(e), .d(d), .x(x), .y(y));
+    top uut(.clk(clk), .i(i), .e(e), .d(d), .x(x), .y(y));
     ////////////////////////////
 
     always begin
@@ -38,8 +38,8 @@ module module_top_tb;
 
     // Generación del archivo VCD
     initial begin
-        $dumpfile("module_top_tb.vcd");
-        $dumpvars(0, module_top_tb);
+        $dumpfile("top_tb.vcd");
+        $dumpvars(0, top_tb);
     end
 
 

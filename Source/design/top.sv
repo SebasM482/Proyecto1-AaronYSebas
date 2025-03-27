@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-module module_top(
+module top(
     //input logic module_inputs //Recibe los valores de los Pins
     input logic clk,
     input logic [3:0] i,   // Numero binario
@@ -16,10 +16,10 @@ module module_top(
     ////////////////////////////
 
     // Instaciamiento de los modulos
-    module_RX_decoder RX (.e(e), .p(p));
-    module_freq_div FREQ (.clk(clk), .clk_out(clk_out), .x(x), .y(y));
-    module_mux MUX (.clk_out(clk_out), .i(i), .p(p), .w(w));
-    module_bcd_decoder BCD (.w(w), .d(d));
+    ham_decoder RX (.e(e), .p(p));
+    freq_div FREQ (.clk(clk), .clk_out(clk_out), .x(x), .y(y));
+    mux MUX (.clk_out(clk_out), .i(i), .p(p), .w(w));
+    seg_decoder BCD (.w(w), .d(d));
     ////////////////////////////
 
 endmodule

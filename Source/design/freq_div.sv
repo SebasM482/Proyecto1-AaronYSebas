@@ -4,7 +4,7 @@
 
 
 
-module module_freq_div(
+module freq_div(
     input logic clk,       // Signal de reloj interno 27 MHz
     output logic clk_out,  // Signal de frecuencia deseada
     output logic x,        // Signal de control de bjt x

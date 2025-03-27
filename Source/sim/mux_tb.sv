@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module module_mux_tb;
+module mux_tb;
 
     // Señales del testbench
     logic clk_out;          // Señal de reloj de prueba
@@ -9,7 +9,7 @@ module module_mux_tb;
     logic [3:0] w;          // Salida
 
     // Instanciar el módulo mux
-    module_mux uut (
+    mux uut (
         .clk_out(clk_out),
         .i(i),
         .p(p),
@@ -51,7 +51,7 @@ module module_mux_tb;
 
         // Generación del archivo VCD
     initial begin
-        $dumpfile("module_mux_tb.vcd");
-        $dumpvars(0, module_mux_tb);
+        $dumpfile("mux_tb.vcd");
+        $dumpvars(0, mux_tb);
     end
 endmodule

@@ -1,11 +1,11 @@
 `timescale 1ns/1ps
 
-module module_bcd_decoder_tb;
+module seg_decoder_tb;
     logic [3:0] w;         // Señal de entrada
     logic [6:0] d;      // Señal de salida
 
     // Instanciamos el módulo 'module_bcd_syndrome'
-    module_bcd_decoder uut (.w(w), .d(d));
+    seg_decoder uut (.w(w), .d(d));
 
     initial begin
         // 0
@@ -51,7 +51,7 @@ module module_bcd_decoder_tb;
 
     initial begin
         // Guardar el archivo de simulación en formato VCD
-        $dumpfile("module_bcd_decoder_tb.vcd");
-        $dumpvars(0, module_bcd_decoder_tb);  // Nombre correcto del módulo de prueba
+        $dumpfile("seg_decoder_tb.vcd");
+        $dumpvars(0, seg_decoder_tb);  // Nombre correcto del módulo de prueba
     end
 endmodule

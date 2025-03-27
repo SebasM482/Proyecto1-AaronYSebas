@@ -1,13 +1,13 @@
 `timescale 1ps/1ps
 
-module module_freq_div_tb;
+module freq_div_tb;
 
     // Declaración de señales
     logic clk;           // Reloj de entrada
     logic clk_out;      // Reloj de salida del divisor de frecuencia
 
     // Instancia del módulo bajo prueba (DUT)
-    module_freq_div uut (.clk(clk), .clk_out(clk_out));
+    freq_div uut (.clk(clk), .clk_out(clk_out));
 
     // Generador de reloj (frecuencia de 27 MHz)
     always begin
@@ -29,7 +29,7 @@ module module_freq_div_tb;
 
     // Generación del archivo VCD
     initial begin
-        $dumpfile("module_freq_div_tb.vcd");
-        $dumpvars(0, module_freq_div_tb);
+        $dumpfile("freq_div_tb.vcd");
+        $dumpvars(0, freq_div_tb);
     end
 endmodule

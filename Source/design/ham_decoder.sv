@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
 // Este modulo recibe un numero binario codificado con Hamming y retorna el sindrome
 
-module module_RX_decoder(input logic [6:0] e, output logic [3:0] p);
+module ham_decoder(input logic [6:0] e, output logic [3:0] p);
 
     // El sindrome es de 3 bits, pero se le agrega un 0 como cuarto bit para que 
     // funcione como entrada del decoder del display 

@@ -4,7 +4,7 @@
 // Dependiendo del estado de la señal de reloj, el mux selecciona el numero binario o el sindrome.
 
 
-module module_mux(
+module mux(
     input logic clk_out,    // Señal de reloj de 1 kHz (selector)
     input logic [3:0] i,    // Entrada 0 (4 bits)
     input logic [3:0] p,    // Entrada 1 (4 bits)
