@@ -2,20 +2,20 @@
 
 module ham_decoder_tb;
     // Declaramos las señales
-    reg [6:0] e;    // Entrada de 7 bits
-    wire [3:0] p;   // Salida de 3 bits
-
+    logic [6:0] e;    // Entrada de 7 bits
+    logic [3:0] p;   // Salida de 3 bits
+    logic [3:0] c;
     // Instanciamos el módulo bajo prueba
-    ham_decoder uut (.e(e), .p(p));
+    ham_decoder uut (.e(e), .p(p), .c(c));
 
     initial begin
         // Error en el bit 5
         e = 7'b1110110; #10;
-        $display("TX: %b, Sindrome: %b", e, p);
+        $display("TX: %b, Sindrome: %b, Correcion: %b", e, p, c);
 
         // Sin error
         e = 7'b1100110; #10;
-        $display("RX: %b, Sindrome: %b", e, p);
+        $display("TX: %b, Sindrome: %b, Correcion: %b", e, p, c);
 
         $finish;
     end
