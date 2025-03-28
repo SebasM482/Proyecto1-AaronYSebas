@@ -15,18 +15,23 @@ SOURCES := $(wildcard ../design/*.v ../design/*.sv) #Todas las fuentes .v o .sv 
 
 #Fuente de simulacion
 #aca va el testbench que quieran simular
-TESTBENCH = ../sim/top_tb.sv
+TESTBENCH = ../sim/ham_decoder_tb.sv
 
 # Constraints para el proyecto
 #aca va el archivo de constraints del proyecto
 CONSTRAINTS = ../constr/Conts-Led-Ports.cst
 
 #el top se indica sin la extension .v, esto hace referencia al nombre que le pusieron al módulo y no al archivo en si.
+<<<<<<< HEAD
 TOP_DESIGN =top
 TOP_TB     =top_tb
+=======
+TOP_DESIGN =module_RX_decoder
+TOP_TB     =ham_decoder_tb
+>>>>>>> 076c4236c2115b6bc8e4d51fec446895f156d418
 
 #nombre del vcd que va a generar el tb
-VCD_FILE = top_tb.vcd
+VCD_FILE = ham_decoder_tb.vcd
 
 
 all: synth pnr bitstream load
