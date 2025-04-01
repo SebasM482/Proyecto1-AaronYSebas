@@ -26,7 +26,7 @@ module ham_decoder(
     assign corrected_e[6] = (p[2:0] == 3'b111) ? ~e[6] : e[6];
 
     // Extraer los bits de datos correctos
-    assign c = {corrected_e[6], corrected_e[5], corrected_e[4], corrected_e[2]};
+    assign c = ~{corrected_e[6], corrected_e[5], corrected_e[4], corrected_e[2]};
 
 endmodule
 
