@@ -11,7 +11,7 @@ module freq_div(
     output logic y);       // Signal de control de bjt y
 
     parameter frequency = 27_000_000;                   // Frecuencia de entrada (27 MHz)
-    parameter freq_out = 1_000;                         // Frecuencia de salida ajustable
+    parameter freq_out = 500;                         // Frecuencia de salida ajustable
     parameter max_count = frequency / (2 * freq_out);   // La cuenta maxima del contador
 
     logic [24:0] count;  // Tamaño suficiente para almacenar max_count

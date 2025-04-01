@@ -19,10 +19,10 @@ TESTBENCH = ../sim/top_tb.sv
 
 # Constraints para el proyecto
 #aca va el archivo de constraints del proyecto
-CONSTRAINTS = ../constr/module_counter.cst
+CONSTRAINTS = ../constr/Conts-Led-Ports.cst
 
 #el top se indica sin la extension .v, esto hace referencia al nombre que le pusieron al módulo y no al archivo en si.
-TOP_DESIGN =module_RX_decoder
+TOP_DESIGN =top
 TOP_TB     =top_tb
 
 #nombre del vcd que va a generar el tb

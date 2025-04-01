@@ -10,14 +10,15 @@ module top_tb;
 
     // Declaracion de salidas
     logic [6:0] d; // Segmentos del display
+    logic [3:0] c;  // Palabra corregida
     logic x;
-    logic y;  //
+    logic y;  
 
     ////////////////////////////
 
 
     // Instaciamiento de los modulos
-    top uut(.clk(clk), .i(i), .e(e), .d(d), .x(x), .y(y));
+    top uut(.clk(clk), .i(i), .e(e), .d(d), .c(c), .x(x), .y(y));
     ////////////////////////////
 
     always begin
@@ -28,7 +29,7 @@ module top_tb;
         clk=0;
         i = 4'b0101; // Numero binario
         e = 7'b1100110; // Numero binario codificado error en bit 5
-        $monitor("Reloj: %t, Segmentos: %b", $time, d);
+        $monitor("Reloj: %t, Segmentos: %b, Correccion: %b", $time, d, c);
 
         
         #3000000; // Simular por 3 ms

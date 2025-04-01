@@ -6,6 +6,7 @@ module top(
     input logic [3:0] i,   // Numero binario
     input logic [6:0] e,   // Numero binario codificado
     output logic [6:0] d,  // Segmentos
+    output logic [3:0] c,  // Palabra corregida
     output logic x,        // Control de bjt
     output logic y);       // Control de bjt
 
@@ -16,10 +17,10 @@ module top(
     ////////////////////////////
 
     // Instaciamiento de los modulos
-    ham_decoder RX (.e(e), .p(p));
-    freq_div FREQ (.clk(clk), .clk_out(clk_out), .x(x), .y(y));
-    mux MUX (.clk_out(clk_out), .i(i), .p(p), .w(w));
-    seg_decoder BCD (.w(w), .d(d));
+    ham_decoder ham (.e(e), .p(p), .c(c));
+    freq_div freq (.clk(clk), .clk_out(clk_out), .x(x), .y(y));
+    mux mux (.clk_out(clk_out), .i(i), .p(p), .w(w));
+    seg_decoder bcd (.w(w), .d(d));
     ////////////////////////////
 
 endmodule
