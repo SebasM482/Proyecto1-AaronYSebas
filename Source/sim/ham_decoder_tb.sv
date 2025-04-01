@@ -17,6 +17,10 @@ module ham_decoder_tb;
         e = 7'b1100110; #10;
         $display("TX: %b, Sindrome: %b, Correcion: %b", e, p, c);
 
+        // error
+        e = 7'b0000111; #10;
+        $display("TX: %b, Sindrome: %b, Correcion: %b", e, p, c);
+
         $finish;
     end
 
