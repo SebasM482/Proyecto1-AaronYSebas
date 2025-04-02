@@ -2,6 +2,8 @@
 
 ## 1. Abreviaturas y definiciones
 - **FPGA**: Field Programmable Gate Arrays
+- **MUX**: Multiplexer
+- **Dip Switch**: Interruptor Deslizable
 
 ## 2. Descripción general del sistema
 ![Esquematico](Recursos/ALL.png)
