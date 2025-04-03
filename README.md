@@ -45,7 +45,11 @@ module ham_decoder(
 
 
 ### **2.2 Módulo `mux`**
-#### 1. Encabezado del módulo
+#### 1. Funcionamiento
+
+<div style="text-align: justify"> El módulo MUX se encarga de decidir cuál de los 2 valores que recibe dejara pasar a ser desplegados en los 7SD. Para esto, y como todo modulo MUX, utiliza una tercera señal, siendo el clock la cual es la encargada de ir oscilando cuál de los 2 valores va a dejar entrar. De esta manera, no se representan ambos numeros al mismo tiempo. </div>
+
+#### 2. Encabezado del módulo
 ```SystemVerilog
 module mux(
     input logic clk_out,    // Señal de reloj de 1 kHz (selector)
@@ -55,7 +59,7 @@ module mux(
 );
 
 ```
-#### 2. Parámetros
+#### 3. Parámetros
 ```SystemVerilog
     always_comb begin
         w = (clk_out) ? p : i; // Si clk_1kHz = 1 -> p, sino -> i
@@ -77,14 +81,18 @@ module mux(
 
 
 ### **2.3 Módulo `seg_decoder`**
-#### 1. Encabezado del módulo
+#### 1. Funcionamiento
+<div style="text-align: justify"> Este módulo es el encargado de, al recibir cualquiera de las 2 señales provenientes del MUX (síndrome o número) puedan ser desplegadas en el display de siete segmentos, esto por medio de asignar a cada una de las entradas del display un valor de acuerdo a la ecuación asignada en el módulo. De esta manera, la palabra recibida de cuatro bits se transforma en 7 bits que se envían a los display y encienden cada segmento respectivamente.</div>
+
+
+#### 2. Encabezado del módulo
 ```SystemVerilog
 module seg_decoder(
     input logic [3:0] w,   // Numero binario de 4 bits
     output logic [6:0] d); // 7 bits de control, uno por cada segmento
 
 ```
-#### 2. Parámetros
+#### 3. Parámetros
 ```SystemVerilog
     assign d[6] =  w[1] | w[3] | (~w[2] & ~w[0]) | (w[2] & w[0]);                               // a
     assign d[5] = ~w[2] | w[1] | ~w[0];                                                         // b
