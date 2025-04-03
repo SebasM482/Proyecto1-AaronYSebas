@@ -33,8 +33,7 @@ module ham_decoder(
 
 
 #### 4. Criterios de diseño
-![Decodificador de Hamming](Recursos/HAM.png)
-
+<img src="Recursos/ham_coder.png" alt="Decoder de display" width="500">
 
 
 #### 5. Testbench
@@ -105,7 +104,7 @@ module seg_decoder(
 
 
 #### 4. Criterios de diseño
-![Decoder de display](Recursos/HAM.png)
+![Decoder de display](Recursos/SEG.png)
 
 
 #### 5. Testbench
@@ -194,9 +193,9 @@ Durante la realización del proyecto se encontraron varios problemas:
 - R/ Realizar troubleshooting en la parte de programación por medio de los test benchs como en la parte física por medio de herramientas de laboratorio. 
 
 ## Apendices:
-### Apendice 1:
-texto, imágen, etc
-
-## 2. Referencias
+## 1. Referencias
 [0] David Harris y Sarah Harris. *Digital Design and Computer Architecture. RISC-V Edition.* Morgan Kaufmann, 2022. ISBN: 978-0-12-820064-3
 
+[1] Sipeed. 2024. Tang Nano 9K. Sipeed Wiki. Available at: https://wiki-sipeed-com.translate.goog/hardware/en/tang/Tang-Nano-9K/Nano-9K.html?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc. Accessed: Feb 31, 2025.
+
+[2] Lushay Labs. 2024. Getting Setup with the Tang Nano 9K. Lushay Labs Learning. Available at: https://learn.lushaylabs.com/getting-setup-with-the-tang-nano-9k/. Accessed: Apr. 2, 2025.
