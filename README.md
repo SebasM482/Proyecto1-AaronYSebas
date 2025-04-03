@@ -175,6 +175,8 @@ module module_freq_div(
 
 ## 4. Consumo de recursos
 
+Usando solamente los bancos de 3.3V, y asumiendo que la corriente es de 100mA, podemos estimar que el consumo de potencia sin uso del LCD se encuentra aproximadamente en los 0.33WH
+
 ## 5. Problemas encontrados durante el proyecto
 Durante la realización del proyecto se encontraron varios problemas:
 1.  Poca familiaridad con el lenguaje de Verilog y su sintaxis
