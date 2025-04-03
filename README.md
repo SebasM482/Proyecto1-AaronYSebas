@@ -15,7 +15,7 @@
 
 ### **2.1 Módulo `ham_decoder`**
 #### 1. Funcionamiento
-<div style="text-align: justify"> El codificador de Hamming se encarga de recibir el mensaje codificado enviado desde los Dip Switches y lograr realizar una decodificación de Hamming al obtener los síndromes necesarios para lograr posicionar el error presente en este. Para esto se realiza la decodificación con los bits de paridad y se asignan a p[2:0] dejando el cuarto bit siempre en 0. </div>
+<div style="text-align: justify"> El codificador de Hamming se encarga de recibir el mensaje codificado enviado desde los Dip Switches y lograr realizar una decodificación de Hamming al obtener los síndromes necesarios para lograr posicionar el error presente en este. Para esto se realiza la decodificación con los bits de paridad y se asignan a p[2:0] dejando el cuarto bit siempre en 0. Por último, este mismo modulo se encarga de lanzar los valores del número correcto hacia las leds de la FPGA, permitiendo desplegar el numero correcto ahi. </div>
 
 #### 2. Encabezado del módulo
 ```SystemVerilog
@@ -126,6 +126,10 @@ module seg_decoder(
 
 
 ### **2.4 Módulo `freq_div`**
+#### 1. Funcionamiento
+<div style="text-align: justify"> El divisor de frecuencia actua como un estilo de reloj logico, periodicamente entregando un valor de 0 o 1, esto para lograr alternar ciertas partes del circuito que no pueden funcionar simultaneamente, como por ejemplo el decodificador para los 7 segmentos, o para el transistor que enciende cada uno de los segementos </div>
+
+
 #### 1. Encabezado del módulo
 ```SystemVerilog
 module module_freq_div(
