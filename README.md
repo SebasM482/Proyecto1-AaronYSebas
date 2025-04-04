@@ -45,7 +45,6 @@ module ham_decoder(
 
 ### **2.2 Módulo `mux`**
 #### 1. Funcionamiento
-
 <div style="text-align: justify"> El módulo MUX se encarga de decidir cuál de los 2 valores que recibe dejara pasar a ser desplegados en los 7SD. Para esto, y como todo modulo MUX, utiliza una tercera señal, siendo el clock la cual es la encargada de ir oscilando cuál de los 2 valores va a dejar entrar. De esta manera, no se representan ambos numeros al mismo tiempo. </div>
 
 #### 2. Encabezado del módulo
@@ -82,7 +81,6 @@ module mux(
 ### **2.3 Módulo `seg_decoder`**
 #### 1. Funcionamiento
 <div style="text-align: justify"> Este módulo es el encargado de, al recibir cualquiera de las 2 señales provenientes del MUX (síndrome o número) puedan ser desplegadas en el display de siete segmentos, esto por medio de asignar a cada una de las entradas del display un valor de acuerdo a la ecuación asignada en el módulo. De esta manera, la palabra recibida de cuatro bits se transforma en 7 bits que se envían a los display y encienden cada segmento respectivamente.</div>
-
 
 #### 2. Encabezado del módulo
 ```SystemVerilog
@@ -129,7 +127,7 @@ module seg_decoder(
 <div style="text-align: justify"> El divisor de frecuencia actua como un estilo de reloj logico, periodicamente entregando un valor de 0 o 1, esto para lograr alternar ciertas partes del circuito que no pueden funcionar simultaneamente, como por ejemplo el decodificador para los 7 segmentos, o para el transistor que enciende cada uno de los segementos </div>
 
 
-#### 1. Encabezado del módulo
+#### 2. Encabezado del módulo
 ```SystemVerilog
 module module_freq_div(
     input logic clk,       // Signal de reloj interno 27 MHz
@@ -137,7 +135,7 @@ module module_freq_div(
     output logic x,        // Signal de control de bjt x
     output logic y);       // Signal de control de bjt y
 ```
-#### 2. Parámetros
+#### 3. Parámetros
 ```SystemVerilog
     parameter frequency = 27_000_000;                   // Frecuencia de entrada (27 MHz)
     parameter freq_out = 1_000;                         // Frecuencia de salida ajustable
