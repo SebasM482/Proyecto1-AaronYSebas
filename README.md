@@ -192,8 +192,65 @@ Durante la realización del proyecto se encontraron varios problemas:
 5.  Fallos desconocidos tanto en la parte física como en la implementación del código.
 - R/ Realizar troubleshooting en la parte de programación por medio de los test benchs como en la parte física por medio de herramientas de laboratorio. 
 
+
+## 6. Osciladores de Anillo
+El tiempo de retardo de propagación ($t_{PD}$) es un parámetro fundamental en la caracterización de circuitos digitales. En este ejercicio, se construirán osciladores en anillo utilizando inversores para analizar los retardos de propagación.
+
+### 6.1.5 Inversores
+<img src="Recursos/grafico_circuito1.png" alt="Decoder de display" width="400">
+
+Como se observa en la imagen, el tiempo de retardo de propagación $t_{PD} \approx 0.014  \space \mu s$ y el periodo de la oscilación $T \approx 0.13 \space \mu s$, es claro que para 5 inversores $T \approx 10 \cdot t_{PD}$.
+
+### 6.2.3 Inversores
+
+<img src="Recursos/grafico_circuito2.png" alt="Decoder de display" width="400">
+<img src="Recursos/grafico_circuito3.png" alt="Decoder de display" width="400">
+
+
+Al disminuir la cantidad de inversores, tambien se generó una disminución en el retardo de propagación $t_{PD(a)} \approx 0.014 \mu s$ y el periodo $T_{(a)} \approx 0.09 \mu s$, estos 2 valores tambien son proporcionales por un factor de 2 veces la cantidad de inversores $T_{(a)} \approx 6 \cdot T_{PD(a)}$.
+La imagen de la derecha muestra las mediciones luego de añadirle un cable largo al circuito, el periodo $T_{(b)} \approx 0.128 \mu s$ y el tiempo de retardo de propagación $t_{PD(b)} = 0.011 \mu S$, pero particularmente en este caso el periodo $T_{(b)} >> 6 \cdot T_{PD(b)}$, para explicar esto se debe modelar el cable, como se muestra en el siguiente circuito.
+
+<img src="Recursos/Circui.png" alt="Decoder de display" width="400">
+
+El cable se comporta como un circuito de retardo $RC$, el cual tiene su constante $\tau=RC$ y tarda 5$\tau$ en cargarse o descargarse completamente, este retardo adicional es el responsable de que $T_{(b)} > 6 \cdot t_{PD(b)}$, 
+
+Entonces se puede generalizar que para $N$ inversores, el periodo de la oscilación será $T \approx 2\cdot N \cdot t_{PD}$ siempre y cuanto haya un buen cableado.
+
+### 6. 3. Inversor en Corto
+En este caso no se tiene ningun tipo de oscilacion debido a que la entrada es la misma que la salida, por lo que no hay forma ni a donde mandar la señal ni lograr que se propague. 
+
+### 6. 4. Resultados y Análisis
+- Obtención de formas de onda con el osciloscopio.
+- Cálculo del tiempo de propagación promedio del inversor.
+- Comparación de resultados entre diferentes configuraciones del oscilador.
+
 ## Apendices:
-## 1. Referencias
+
+## 1. Mapas de Karnaugh
+Mapa de Karnaugh 1-Segmento D: 
+
+
+<img src="Recursos/K1.png" alt="Decoder de display" width="400">
+
+
+Mapa de Karnaugh 2-Segmento E:
+
+
+<img src="Recursos/K2.png" alt="Decoder de display" width="400">
+
+
+Mapa de Karnaugh 3-Segmento F:
+
+
+<img src="Recursos/K3.png" alt="Decoder de display" width="400">
+
+
+Mapa de Karnaugh 4-Segmento G:
+
+
+<img src="Recursos/K4.png" alt="Decoder de display" width="400">
+
+## 2. Referencias
 [0] David Harris y Sarah Harris. *Digital Design and Computer Architecture. RISC-V Edition.* Morgan Kaufmann, 2022. ISBN: 978-0-12-820064-3
 
 [1] Sipeed. 2024. Tang Nano 9K. Sipeed Wiki. Available at: https://wiki-sipeed-com.translate.goog/hardware/en/tang/Tang-Nano-9K/Nano-9K.html?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc. Accessed: Feb 31, 2025.
