@@ -199,3 +199,5 @@ Durante la realización del proyecto se encontraron varios problemas:
 [1] Sipeed. 2024. Tang Nano 9K. Sipeed Wiki. Available at: https://wiki-sipeed-com.translate.goog/hardware/en/tang/Tang-Nano-9K/Nano-9K.html?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc. Accessed: Feb 31, 2025.
 
 [2] Lushay Labs. 2024. Getting Setup with the Tang Nano 9K. Lushay Labs Learning. Available at: https://learn.lushaylabs.com/getting-setup-with-the-tang-nano-9k/. Accessed: Apr. 2, 2025.
+
+[3] O. A. Martínez Rodríguez, "Divisor de frecuencia en Verilog," YouTube, 2016. https://www.youtube.com/watch?v=sLz8vAvoils. Accedido: 5-abr-2025.
